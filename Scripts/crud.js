@@ -1,10 +1,21 @@
 // crud - create, read, Updste, Delete
 // global variables
-
+var row = null
 function subMit() {
-    var dataEntered = retrieveData();
+    var dataEntered = retrieveData(); 
     var readData = readingDataFromLocalStorage(dataEntered);
-    insert(readData);
+    if(dataEntered == false) {
+        msg.innerHTML = `<h3 style="color: red;">Plese Insert Data!</h3>`;
+    } else{
+        if(row == null) {
+            insert(readData);
+            msg.innerHTML = `<h3 style="color: yellow;">Data Inserted!</h3>`;
+        } else{
+            update();
+            msg.innerHTML = `<h3 style="color: orange;">Data Updated!</h3>`;
+         } 
+    } 
+     document.getElementById('form').onreset();      
   }
   
   //CREATE
@@ -15,7 +26,11 @@ function subMit() {
       var exp = document.getElementById('exp').value;
   
       var arr = [name1, job, exp];
-      return arr;
+      if (arr.includes('')) {
+        return false;
+      } else {
+        return arr;
+      }
   }
   
   
@@ -41,6 +56,29 @@ function subMit() {
     row.insertCell(1).innerHTML = readData[1];
     row.insertCell(2).innerHTML = readData[2]; 
     row.insertCell(3).innerHTML = `<button onclick=edit(this)>Edit</button>
-    <button>Delete</button>`;
+    <button onclick=remove(this)>Delete</button>`;
   }
   
+  //Edit 
+    function edit(td) {
+       row = td.parentElement.parentElement;
+       document.getElementById("name").value = row.cells[0].innerHTML;
+       document.getElementById("job").value = row.cells[1].innerHTML;
+       document.getElementById("exp").value = row.cells[2].innerHTML;
+    }
+  //Update
+    function update(td) {
+        row.cells[0].innerHTML = document.getElementById("name").value;
+        row.cells[1].innerHTML = document.getElementById("job").value;
+        row.cells[2].innerHTML = document.getElementById("exp").value;
+        row = null;
+    }
+  //Delete
+  function remove(td) {
+    var ans = confirm('Are you sure u want to delete this record')
+    if (ans == true) {
+        row = td.parentElement.parentElement;
+        document.getElementById('table').deleteRow(row.rowIndex);
+    }
+    
+  }

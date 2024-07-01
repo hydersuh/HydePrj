@@ -1,0 +1,27 @@
+body {
+    background-color: rgb(18, 18, 57);
+    color: white;
+}
+
+table {
+    border-color: white;
+}
+
+td {
+     padding-top: 8px 16px;
+}
+
+.col{
+    font-weight: 700;
+    font-size: 18px;
+    background-color: rgb(212, 169, 76);
+}
+tr{
+    background-color: rgb(165, 233, 235);
+    color: black;
+    text-align: center;
+}
+
+input{
+    font-size: 15px;
+}
