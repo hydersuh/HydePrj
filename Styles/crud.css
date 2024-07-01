@@ -15,6 +15,7 @@ td {
     font-weight: 700;
     font-size: 18px;
     background-color: rgb(212, 169, 76);
+    padding: 12px;
 }
 tr{
     background-color: rgb(165, 233, 235);
@@ -25,3 +26,23 @@ tr{
 input{
     font-size: 15px;
 }
+
+#btn{
+    background-color: red;
+    padding: 12px;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+#name, 
+#job, 
+#exp{
+    background-color: burlywood;
+    padding: 10px;
+    font-size: 25px;
+    font-weight: 700;
+    color: rgb(28, 28, 182);
+}
+
+
