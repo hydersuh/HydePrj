@@ -55,8 +55,8 @@ function subMit() {
     row.insertCell(0).innerHTML = readData[0];
     row.insertCell(1).innerHTML = readData[1];
     row.insertCell(2).innerHTML = readData[2]; 
-    row.insertCell(3).innerHTML = `<button onclick=edit(this)>Edit</button>
-    <button onclick=remove(this)>Delete</button>`;
+    row.insertCell(3).innerHTML = `<button class="butn" onclick=edit(this)>Edit</button>
+    <button class="butn"onclick=remove(this)>Delete</button>`;
   }
   
   //Edit 

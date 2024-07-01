@@ -51,4 +51,14 @@ input{
     color: rgb(28, 28, 182);
 }
 
+.butn{
+    padding: 8px;
+    background-color: rgb(150, 120, 210);
+    border: none;
+    color: black;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
 
