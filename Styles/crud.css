@@ -23,6 +23,12 @@ tr{
     text-align: center;
 }
 
+td{
+    padding: 8px;
+    color: blue;
+    font-size: 20px;
+}
+
 input{
     font-size: 15px;
 }
